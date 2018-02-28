@@ -13,6 +13,12 @@ There are two examples of Consumer and Producer with DLQ. If you need more detai
 
 # The exception: Using AmqpRejectAndDontRequeueException
 
+Very useful to control errors from business rules. When you would like to reject the message, you can just throw the `AmqpRejectAndDontRequeueException`. Remember that any other exception will put the message again in the main queue, creating a infinite loop by default.
+
+With the configuration to pass the rejected messages to a DLQ queue (as implemented in this project), the messages that cause a `AmqpRejectAndDontRequeueException` will be redirected to the DLQ, waiting for some action (to be analyzed, redelivered, etc)
+
+Some quotes about the exception from Spring documentation:
+
 > [...] you can throw a AmqpRejectAndDontRequeueException; this prevents message requeuing, regardless of the setting of the defaultRequeueRejected property. 
 
 > [...] the listener can throw an AmqpRejectAndDontRequeueException to conditionally control this behavior.
