@@ -11,7 +11,9 @@ With a RabbitMQ running, just:
 
 There are two examples of Consumer and Producer with DLQ. If you need more details, just read the Spring documentation section about [Exception Handling](https://docs.spring.io/spring-amqp/docs/latest-ga/reference/htmlsingle/#exception-handling)
 
-# The exception: Using AmqpRejectAndDontRequeueException
+# Introduction
+
+## The exception AmqpRejectAndDontRequeueException
 
 Very useful to control errors from business rules. When you would like to reject the message, you can just throw the `AmqpRejectAndDontRequeueException`. Remember that any other exception will put the message again in the main queue, creating a infinite loop by default.
 
@@ -23,7 +25,7 @@ Some quotes about the exception from Spring documentation:
 
 > [...] the listener can throw an AmqpRejectAndDontRequeueException to conditionally control this behavior.
 
-# The DefaultRequeueRejected flag from SimpleMessageListenerContainer
+## The DefaultRequeueRejected flag from SimpleMessageListenerContainer
 
 This configuration is more safer than the `AmqpRejectAndDontRequeueException` if you have fear about errors with the content-type of the message. Listeners that throws any Exception (included `AmqpRejectAndDontRequeueException`) will be redirected to the DLQ queue.
 
