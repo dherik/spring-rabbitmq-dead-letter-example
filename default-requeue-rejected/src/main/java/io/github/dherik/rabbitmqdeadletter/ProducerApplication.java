@@ -1,5 +1,7 @@
-package io.github.dherik.rabbitmqdeadletter.factory;
+package io.github.dherik.rabbitmqdeadletter;
 
+import io.github.dherik.rabbitmqdeadletter.factory.Consumer;
+import io.github.dherik.rabbitmqdeadletter.factory.ConsumerConfiguration;
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

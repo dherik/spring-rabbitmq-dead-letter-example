@@ -13,7 +13,7 @@ public class ConsumerConfiguration {
     public static final String EMAIL_EXCHANGE = "email.exchange";
     public static final String EMAIL_EXCHANGE_DLX_RK = "email.exchangeRK";
 
-    static final String SEND_EMAIL_QUEUE_DLQ = "send.email.dlq";
+    public static final String SEND_EMAIL_QUEUE_DLQ = "send.email.dlq";
     static final String SEND_EMAIL_QUEUE = "send.email";
 
     public static final String EMAIL_EVENT_CREATE_RK = "email.event.create";

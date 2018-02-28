@@ -1,5 +1,7 @@
-package io.github.dherik.rabbitmqdeadletter.exception;
+package io.github.dherik.rabbitmqdeadletter;
 
+import io.github.dherik.rabbitmqdeadletter.exception.Consumer;
+import io.github.dherik.rabbitmqdeadletter.exception.ConsumerConfiguration;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
