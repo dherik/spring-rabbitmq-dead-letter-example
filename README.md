@@ -25,6 +25,10 @@ Some quotes about the exception from Spring documentation:
 
 # The DefaultRequeueRejected flag from SimpleMessageListenerContainer
 
+This configuration is more safer than the `AmqpRejectAndDontRequeueException` if you have fear about errors with the content-type of the message. Listeners that throws any Exception (included `AmqpRejectAndDontRequeueException`) will be redirected to the DLQ queue.
+
+Some quotes about the flag from Spring documentation:
+
 > Setting defaultRequeueRejected to false will cause messages to be discarded (or routed to a dead letter exchange).
 
 > [...] When a message that cannot be converted is encountered (for example an invalid content_encoding header), some exceptions are thrown before the message reaches user code. With defaultRequeueRejected set to true (default), such messages would be redelivered over and over.
